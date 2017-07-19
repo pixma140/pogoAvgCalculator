@@ -26,59 +26,73 @@
 			
 			<p>This is a calculator to calculate the averages out of the trainer statistics.</p>
 
-			<div class="form-group">
+			<hr>
+			
+			<div class="form-group">			
+			
+				<label for="begin">Wann hast du angefangen Pokemon Go zu spielen?:</label>
+				<input type="date" class="form-control" id="begin">	
+
+				<label for="exp">Wie viel EP hast du bisher in Summe erreicht?:</label>
+				<input type="number" class="form-control" id="exp">					
+				
+				<hr>
+				
 				<label for="km">Gelaufene Kilometer:</label>
-				<input type="text" class="form-control" id="km">
+				<input type="number" class="form-control" id="km">
 				
 				<label for="pst">Pokestops:</label>
-				<input type="text" class="form-control" id="pst">
+				<input type="number" class="form-control" id="pst">
 				
 				<hr>
 				
 				<label for="cpkm">Gefangene Pokémon:</label>
-				<input type="text" class="form-control" id="cpkm">
+				<input type="number" class="form-control" id="cpkm">
 				
 				<label for="evo">Entwicklungen:</label>
-				<input type="text" class="form-control" id="evo">
+				<input type="number" class="form-control" id="evo">
 				
 				<label for="egg">Eier:</label>
-				<input type="text" class="form-control" id="egg">
+				<input type="number" class="form-control" id="egg">
 				
 				<hr>
 				
 				<label for="kent">Kanto Einträge:</label>
-				<input type="text" class="form-control" id="kent">
+				<input type="number" class="form-control" id="kent">
 				
 				<label for="jent">Johto Einträge:</label>
-				<input type="text" class="form-control" id="jent">					
+				<input type="number" class="form-control" id="jent">					
 				
 				<hr>
 				
 				<label for="gymb">Arenen Kämpfe:</label>
-				<input type="text" class="form-control" id="gymb">
+				<input type="number" class="form-control" id="gymb">
 				
 				<label for="gymt">Arenen Training:</label>
-				<input type="text" class="form-control" id="gymt">
+				<input type="number" class="form-control" id="gymt">
 				
 				<hr>
 											
 				<label for="gymd">Verteidigungszeit (ohne Pokémon die noch rückkehren):</label>
-				<input type="text" class="form-control" id="gymd">
+				<input type="number" class="form-control" id="gymd">
 				
 				<label for="feed">Fütterung:</label>
-				<input type="text" class="form-control" id="feed">
+				<input type="number" class="form-control" id="feed">
 				
 				<label for="raid">Raids:</label>
-				<input type="text" class="form-control" id="raid">
+				<input type="number" class="form-control" id="raid">
 				
 				<hr>
 				
 				<label for="mon">Eingesetztes Geld:</label>
-				<input type="text" class="form-control" id="mon">
+				<input type="number" class="form-control" id="mon">
 				
 				<hr>
 				
-				<button type="button" onclick="calculate()" class="btn">Calculate</button>
+				<div class="btn-group">
+					<button type="button" onclick="calculate()" class="btn btn-success">Calculate</button>
+					<button type="button" onclick="reset()" class="btn btn-danger">Reset</button>										
+				</div>									
 			
 			</div>	
 			
@@ -89,6 +103,16 @@
 	
 		function calculate() {
 			alert("Under Construction");
+		}
+		
+		function reset() {
+			var res = confirm("Do you really want to reset?");
+			
+			if (res) {
+				alert("reset done");
+			} else {
+				alert("no reset done");
+			}
 		}
 		
 	</script>
