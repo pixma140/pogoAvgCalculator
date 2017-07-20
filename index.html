@@ -109,7 +109,7 @@
 				<div class="text-center">    
 					<div class="btn-group">					
 						<button type="button" onclick="reset()" class="btn btn-danger">Reset</button>
-						<button type="button" onclick="calculate()" class="btn btn-success">Berechnen</button>
+						<button type="button" id="calc" onclick="calculate()" class="btn btn-success">Berechnen</button>
 					</div>									
   
 				</div>
@@ -159,6 +159,8 @@
 			
 			// check if date is valid
 			if (time != "") {
+			
+				document.getElementById("calc").disabled = true;
 				
 				var date = time.split("-");
 				
@@ -286,7 +288,8 @@
 				document.getElementById("raid").value = avgRaid;		
 				document.getElementById("mon").value = avgMon;
 				document.getElementById("comment").value = "";
-				document.getElementById("comment").rows = 2;				
+				document.getElementById("comment").rows = 2;
+				document.getElementById("calc").disabled = false;				
 			} 
 		}
 		
