@@ -101,6 +101,11 @@
 				
 				<hr>
 				
+				<label for="comment">Ergebnis:</label>
+				<textarea class="form-control" readonly placeholder="Hier erscheint nach Eingabe der Werte deine Duchschnittliche Statistik" rows="1" id="comment"></textarea>
+				
+				<hr>
+				
 				<div class="text-center">    
 					<div class="btn-group">					
 						<button type="button" onclick="reset()" class="btn btn-danger">Reset</button>
@@ -108,7 +113,7 @@
 					</div>									
   
 				</div>
-				
+							
 			</div>	
 			
 		</div>		
@@ -251,7 +256,10 @@
 								(avgGymd/sinceGymUpdate).toFixed(0) + " Stunden pro Tag in Arenen und du hast täglich " + (avgFeed/sinceGymUpdate).toFixed(1) + " Beeren gefüttert und " + 
 								(avgRaid/sinceGymUpdate).toFixed(1) + " Raids pro Tag bestritten. \n\nDas alles hat dich pro Tag " + (avgMon/allDays).toFixed(2) + " Euro gekostet.";
 				
-				alert(myOutput);
+				document.getElementById("comment").rows = 10;
+				document.getElementById("comment").value = myOutput;	
+				
+				//alert(myOutput);
 										
 			} else {
 				alert("Bitte ein gültiges Datum eingeben!");
@@ -276,7 +284,9 @@
 				document.getElementById("gymd").value = avgGymd;		
 				document.getElementById("feed").value = avgFeed;		
 				document.getElementById("raid").value = avgRaid;		
-				document.getElementById("mon").value = avgMon;		
+				document.getElementById("mon").value = avgMon;
+				document.getElementById("comment").value = "";
+				document.getElementById("comment").rows = 1;				
 			} 
 		}
 		
