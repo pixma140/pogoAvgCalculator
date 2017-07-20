@@ -40,64 +40,64 @@
 
 			<hr>
 			
-			<div class="form-group">			
+			<div class="form-group"> <!-- has-feedback has-clear -->
 			
-				<label for="begin">Wann hast du angefangen Pokemon Go zu spielen?:</label>
-				<input type="date" min="2016-07-06" max="2025-12-31" class="form-control" id="begin">			
+				<label for="begin">Wann hast du angefangen Pokémon Go zu spielen?:</label>				
+				<input type="date" value="2016-07-13" min="2016-07-06" max="2025-12-31" class="form-control" id="begin">
 				
 				<label for="exp">Wie viel EP hast du bisher in Summe erreicht?:</label>
-				<input type="number" class="form-control" id="exp">					
+				<input type="number" placeholder="Bitte hier deine EP eingeben" class="form-control" id="exp">					
 				
 				<hr>
 				
 				<label for="km">Gelaufene Kilometer:</label>
-				<input type="number" class="form-control" id="km">
+				<input type="number" placeholder="Bitte hier deine gelaufenen Kilometer eingeben" class="form-control" id="km">
 				
-				<label for="pst">Pokestops:</label>
-				<input type="number" class="form-control" id="pst">
+				<label for="pst">Pokéstops:</label>
+				<input type="number" placeholder="Bitte hier die Anzahl der abgedrehten Pokéstops eingeben" class="form-control" id="pst">
 				
 				<hr>
 				
 				<label for="cpkm">Gefangene Pokémon:</label>
-				<input type="number" class="form-control" id="cpkm">
+				<input type="number" placeholder="Bitte hier Anzahl der gefangenen Pokémon eingeben" class="form-control" id="cpkm">
 				
 				<label for="evo">Entwicklungen:</label>
-				<input type="number" class="form-control" id="evo">
+				<input type="number" placeholder="Bitte hier die Anzahl der Entwickelten Pokémon eingeben" class="form-control" id="evo">
 				
 				<label for="egg">Eier:</label>
-				<input type="number" class="form-control" id="egg">
+				<input type="number" placeholder="Bitte hier die Anzahl der gebrüteten Eier eingeben" class="form-control" id="egg">
 				
 				<hr>
 				
 				<label for="kent">Kanto Einträge:</label>
-				<input type="number" class="form-control" id="kent">
+				<input type="number" placeholder="Bitte hier Anzahl der Kanto Einträge eingeben" class="form-control" id="kent">
 				
 				<label for="jent">Johto Einträge:</label>
-				<input type="number" class="form-control" id="jent">					
+				<input type="number" placeholder="Bitte hier Anzahl der Johhto Einträge eingeben" class="form-control" id="jent">					
 				
 				<hr>
 				
 				<label for="gymb">Arenen Kämpfe:</label>
-				<input type="number" class="form-control" id="gymb">
+				<input type="number" placeholder="Bitte hier Arenenkämpfe eingeben" class="form-control" id="gymb">
 				
 				<label for="gymt">Arenen Training:</label>
-				<input type="number" class="form-control" id="gymt">
+				<input type="number" placeholder="Bitte hier die Trainingsanzahl eingeben" class="form-control" id="gymt">
 				
 				<hr>
 											
-				<label for="gymd">Verteidigungszeit (ohne Pokémon die noch rückkehren):</label>
-				<input type="number" class="form-control" id="gymd">
+				<label for="gymd">Verteidigungszeit:</label>
+				<input type="number" placeholder="Bitte hier die Verteidigungszeit eingeben (ohne Pokémon die noch rückkehren)" class="form-control" id="gymd">
 				
-				<label for="feed">Fütterung:</label>
-				<input type="number" class="form-control" id="feed">
+				<label for="feed">Gefütterte Beeren:</label>
+				<input type="number" placeholder="Bitte hier Anzahl der gefütterten Beeren eingeben" class="form-control" id="feed">
 				
-				<label for="raid">Raids:</label>
-				<input type="number" class="form-control" id="raid">
+				<label for="raid">Gewonnene Raids:</label>
+				<input type="number" placeholder="Bitte hier Anzahl Gewonnener Raids eingeben" class="form-control" id="raid">
 				
 				<hr>
 				
 				<label for="mon">Eingesetztes Geld:</label>
-				<input type="number" class="form-control" id="mon">
+				<input type="number" placeholder="Bitte hier ausgegebenes Geld angeben sofern gewünscht" class="form-control" id="mon">
 				
 				<hr>
 				
@@ -116,74 +116,167 @@
 	
 	<script>
 	
+		// needed days
+		var RELEASE_DATE = new Date(2016, 6, 06);	
+		var JOHTO_DATE = new Date(2017, 1, 16);
+		var GYM_UPDATE_DATE = new Date(2017, 5, 22);
+			
+		// handle variables
+		var myBeginDate;
+		var todayDate;
+		
+		// used for division
+		var allDays;
+		var sinceGymUpdate;
+		var sinceJohto;
+		var toGymUpdate;
+		
+		// vars
+		var avgExp = 0;
+		var avgKm = 0;
+		var avgPst = 0;
+		var avgCpkm = 0;
+		var avgEvo = 0;
+		var avgEgg = 0;
+		var avgKent = 0;
+		var avgJent = 0;
+		var avgGymb = 0;
+		var avgGymt = 0;
+		var avgGymd = 0;
+		var avgFeed = 0;
+		var avgRaid = 0; 
+		var avgMon = 0;
+	
 		function calculate() {
-			alert("Under Construction");
+				
+			// get time
+			var time = document.getElementById("begin").value;
 			
-			// get time as string
-			//var time = document.getElementById("begin").value;
-			//make to date			
-			//alert(time);		
-			
-			/*			
-			var allDays = 371;
-			var sinceJohto = 20;
-			var toGymUpdate = 123;
-			var sinceGymUpdate = 30;
-			
-			// avg calculation
-			var avgExp = document.getElementById("exp").value / allDays;
-			var avgKm = document.getElementById("km").value / allDays;
-			var avgPst = document.getElementById("pst").value / allDays;
-			var avgCpkm	= document.getElementById("cpkm").value / allDays;
-			var avgEvo = document.getElementById("evo").value / allDays;
-			var avgEgg = document.getElementById("egg").value / allDays;
-			var avgKent = document.getElementById("kent").value / allDays;			// seit beginn
-			var avgJent = document.getElementById("jent").value / sinceJohto;		// seit johto
-			var avgGymb = document.getElementById("gymb").value / allDays;
-			var avgGymt = document.getElementById("gymt").value / toGymUpdate; 		// bis arena update
-			var avgGymd = document.getElementById("gymd").value / sinceGymUpdate; 	// ab arena update
-			var avgFeed = document.getElementById("feed").value / sinceGymUpdate; 	// ab arena update
-			var avgRaid = document.getElementById("raid").value / sinceGymUpdate; 	// ab arena update
-			var avgMon = document.getElementById("exp").value / allDays;
+			// check if date is valid
+			if (time != "") {
+				
+				var date = time.split("-");
+				
+				// get date from user and get todays date
+				myBeginDate = new Date(date[0], date[1]-1, date[2]);				
+				todayDate = new Date();								
+				
+				/*
+				alert(date);
+				alert(RELEASE_DATE);
+				alert(JOHTO_DATE);
+				alert(GYM_UPDATE_DATE);
+				alert("y: " + date[0] + " m: " + date[1] + " d: " + date[2]);
+				alert(myBeginDate.getMonth());
+				alert("begin date: " + myBeginDate);				
+				*/				
+				
+				// in case ot today date before begin date
+				if (todayDate < myBeginDate) {
+					alert("Error: Todays date can't be before begin date!");
+					allDays = 0;							
+				} else {
+					allDays = todayDate - myBeginDate;							
+				}
+				
+				// in case today date before sinceGymUpdate
+				if (todayDate < sinceGymUpdate) {
+					alert("Error: Todays date can't be before gym update date!");
+					sinceGymUpdate = 0;
+				} else {
+					sinceGymUpdate = todayDate - GYM_UPDATE_DATE;
+				}
+				
+				// in case of today date before JOHTO_DATE
+				if (todayDate < JOHTO_DATE) {
+					alert("Error: Todays date can't be before johto date!");
+					sinceJohto = 0;
+				} else {
+					sinceJohto = todayDate - JOHTO_DATE;
+				}
+				
+				// in case player started after gym update
+				if (GYM_UPDATE_DATE < myBeginDate) {
+					toGymUpdate = 0;
+				} else {
+					toGymUpdate = GYM_UPDATE_DATE - myBeginDate;
+				}
 
-			// set new values			
-			document.getElementById("exp").value += "" + avgExp.toFixed(2);		
-			document.getElementById("km").value += "" + avgKm.toFixed(2);		
-			document.getElementById("pst").value += "" + avgPst.toFixed(2);		
-			document.getElementById("cpkm").value += "" + avgCpkm.toFixed(2);		
-			document.getElementById("evo").value += "" + avgEvo.toFixed(2);		
-			document.getElementById("egg").value += "" + avgEgg.toFixed(2);		
-			document.getElementById("kent").value += "" + avgKent.toFixed(2);
-			document.getElementById("jent").value += "" + avgJent.toFixed(2);
-			document.getElementById("gymb").value += "" + avgGymb.toFixed(2);		
-			document.getElementById("gymt").value += "" + avgGymt.toFixed(2);		
-			document.getElementById("gymd").value += "" + avgGymd.toFixed(2);		
-			document.getElementById("feed").value += "" + avgFeed.toFixed(2);		
-			document.getElementById("raid").value += "" + avgRaid.toFixed(2);		
-			document.getElementById("mon").value += "" + avgMon.toFixed(2);
-			
-			*/
+				// convert from milliseconds to days without comma
+				allDays = (allDays / (1000*60*60*24)).toFixed(0);
+				sinceJohto = (sinceJohto / (1000*60*60*24)).toFixed(0);
+				sinceGymUpdate = (sinceGymUpdate / (1000*60*60*24)).toFixed(0);
+				toGymUpdate = (toGymUpdate / (1000*60*60*24)).toFixed(0);
+				
+				//alert(allDays + " " + sinceJohto + " " + sinceGymUpdate + " " + toGymUpdate);				
+				
+				// get values
+				avgExp = document.getElementById("exp").value;
+				avgKm = document.getElementById("km").value;
+				avgPst = document.getElementById("pst").value;
+				avgCpkm	= document.getElementById("cpkm").value;
+				avgEvo = document.getElementById("evo").value;
+				avgEgg = document.getElementById("egg").value;
+				avgKent = document.getElementById("kent").value;
+				avgJent = document.getElementById("jent").value;
+				avgGymb = document.getElementById("gymb").value;
+				avgGymt = document.getElementById("gymt").value;
+				avgGymd = document.getElementById("gymd").value;
+				avgFeed = document.getElementById("feed").value; 
+				avgRaid = document.getElementById("raid").value;
+				avgMon = document.getElementById("mon").value;							
+
+				// avg calculation and set new values fixed to two decimals
+				document.getElementById("exp").value = (avgExp/allDays).toFixed(0);				// seit beginn		
+				document.getElementById("km").value = (avgKm/allDays).toFixed(3);		
+				document.getElementById("pst").value = (avgPst/allDays).toFixed(0);		
+				document.getElementById("cpkm").value = (avgCpkm/allDays).toFixed(1);		
+				document.getElementById("evo").value = (avgEvo/allDays).toFixed(1);		
+				document.getElementById("egg").value = (avgEgg/allDays).toFixed(1);		
+				document.getElementById("kent").value = (avgKent/allDays).toFixed(2);			
+				document.getElementById("jent").value = (avgJent/sinceJohto).toFixed(2);		// seit johto
+				document.getElementById("gymb").value = (avgGymb/allDays).toFixed(1);			// seit beginn
+				document.getElementById("gymt").value = (avgGymt/toGymUpdate).toFixed(1);		// bis arena update
+				document.getElementById("gymd").value = (avgGymd/sinceGymUpdate).toFixed(0); 	// ab arena update		
+				document.getElementById("feed").value = (avgFeed/sinceGymUpdate).toFixed(2); 			
+				document.getElementById("raid").value = (avgRaid/sinceGymUpdate).toFixed(1); 			
+				document.getElementById("mon").value = (avgMon/allDays).toFixed(2);				// seit beginn
+				
+				var myOutput = 	"Während du PokémonGo gespielt hast, hast du " + (avgExp/allDays).toFixed(0) + " EP pro Tag gefarmt. Dazu warst du " + (avgKm/allDays).toFixed(3) +
+								" Kilometer pro Tag unterwegs und hast dabei im Schnitt " + (avgPst/allDays).toFixed(0) + " Pokéstops abgedreht, " + (avgCpkm/allDays).toFixed(1) +
+								" Pokémon gefangen und " + (avgEgg/allDays).toFixed(1) + " Eier ausgebrütet. Dazu hast du " + (avgEvo/allDays).toFixed(1) +
+								" Pokémon entwickelt. \n\nSeit Beginn des Spiels hast du pro Tag " + (avgKent/allDays).toFixed(2) + " Pokémon aus der Kanto Region, und " + 
+								(avgJent/sinceJohto).toFixed(2) + " Pokémon aus der Johto Region gefangen. \n\nPro Tag hast du " + (avgGymb/allDays).toFixed(1) +
+								" mal an Arenen gekämpft und bis zum Arenen Update " + (avgGymt/toGymUpdate).toFixed(1) + " mal Trainiert. Seit dem Arenen Update saßen deine Pokémon " + 
+								(avgGymd/sinceGymUpdate).toFixed(0) + " Stunden pro Tag in Arenen und du hast täglich " + (avgFeed/sinceGymUpdate).toFixed(1) + " Beeren gefüttert und " + 
+								(avgRaid/sinceGymUpdate).toFixed(1) + " Raids pro Tag bestritten. \n\nDas alles hat dich pro Tag " + (avgMon/allDays).toFixed(2) + " Euro gekostet.";
+				
+				alert(myOutput);
+										
+			} else {
+				alert("Bitte ein gültiges Datum eingeben!");
+			}			
 		}
 		
 		function reset() {
 			var res = confirm("Do you really want to reset?");
 			
 			if (res) {
-				document.getElementById("begin").value = "";		
-				document.getElementById("exp").value = "";		
-				document.getElementById("km").value = "";		
-				document.getElementById("pst").value = "";		
-				document.getElementById("cpkm").value = "";		
-				document.getElementById("evo").value = "";		
-				document.getElementById("egg").value = "";		
-				document.getElementById("kent").value = "";
-				document.getElementById("jent").value = "";
-				document.getElementById("gymb").value = "";		
-				document.getElementById("gymt").value = "";		
-				document.getElementById("gymd").value = "";		
-				document.getElementById("feed").value = "";		
-				document.getElementById("raid").value = "";		
-				document.getElementById("mon").value = "";		
+				document.getElementById("begin").value = "2016-07-13";		
+				document.getElementById("exp").value = avgExp;		
+				document.getElementById("km").value = avgKm;		
+				document.getElementById("pst").value = avgPst;		
+				document.getElementById("cpkm").value = avgCpkm;		
+				document.getElementById("evo").value = avgEvo;		
+				document.getElementById("egg").value = avgEgg;		
+				document.getElementById("kent").value = avgKent;
+				document.getElementById("jent").value = avgJent;
+				document.getElementById("gymb").value = avgGymb;		
+				document.getElementById("gymt").value = avgGymt;		
+				document.getElementById("gymd").value = avgGymd;		
+				document.getElementById("feed").value = avgFeed;		
+				document.getElementById("raid").value = avgRaid;		
+				document.getElementById("mon").value = avgMon;		
 			} 
 		}
 		
