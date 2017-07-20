@@ -111,9 +111,13 @@
 						<button type="button" onclick="reset()" class="btn btn-danger">Reset</button>
 						<button type="button" id="calc" onclick="calculate()" class="btn btn-success">Berechnen</button>
 					</div>									
-  
+
+					<hr>
+										
+					<a id="1479781" href="http://www.gratis-besucherzaehler.de">http://www.gratis-besucherzaehler.de/</a><script type="text/javascript" language="JavaScript" src="https://www.gratis-besucherzaehler.net/counter_js.php?account=1479781&style=12"></script>					
+					
 				</div>
-							
+				
 			</div>	
 			
 		</div>		
@@ -249,7 +253,7 @@
 				document.getElementById("raid").value = (avgRaid/sinceGymUpdate).toFixed(1); 			
 				document.getElementById("mon").value = (avgMon/allDays).toFixed(2);				// seit beginn
 				
-				var myOutput = 	"Während du PokémonGo gespielt hast, hast du " + (avgExp/allDays).toFixed(0) + " EP pro Tag gefarmt. Dazu warst du " + (avgKm/allDays).toFixed(3) +
+				var myOutput = 	"Während du bereits " + allDays + " Tage PokémonGo gespielt hast, hast du " + (avgExp/allDays).toFixed(0) + " EP pro Tag gefarmt. Dazu warst du " + (avgKm/allDays).toFixed(3) +
 								" Kilometer pro Tag unterwegs und hast dabei im Schnitt " + (avgPst/allDays).toFixed(0) + " Pokéstops abgedreht, " + (avgCpkm/allDays).toFixed(1) +
 								" Pokémon gefangen und " + (avgEgg/allDays).toFixed(1) + " Eier ausgebrütet. Dazu hast du " + (avgEvo/allDays).toFixed(1) +
 								" Pokémon entwickelt. \n\nSeit Beginn des Spiels hast du pro Tag " + (avgKent/allDays).toFixed(2) + " Pokémon aus der Kanto Region, und " + 
