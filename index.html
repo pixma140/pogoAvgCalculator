@@ -109,7 +109,8 @@
 				<div class="text-center">    
 					<div class="btn-group">					
 						<button type="button" onclick="reset()" class="btn btn-danger">Reset</button>
-						<button type="button" id="calc" onclick="calculate()" class="btn btn-success">Berechnen</button>
+						<button type="button" id="clipboard" onclick="copyToClipboard(myOutput)" class="btn btn-primary">In Zwischenablage kopieren</button>
+						<button type="button" id="calc" onclick="calculate()" class="btn btn-success">Berechnen</button>						
 					</div>									
 					
 				</div>
@@ -120,6 +121,8 @@
 	</body>
 	
 	<script>
+	
+		document.getElementById("clipboard").disabled = true;
 	
 		// needed days
 		var RELEASE_DATE = new Date(2016, 6, 06);	
@@ -151,6 +154,8 @@
 		var avgFeed = 0;
 		var avgRaid = 0; 
 		var avgMon = 0;
+		
+		var myOutput = "";
 	
 		function calculate() {
 				
@@ -161,6 +166,7 @@
 			if (time != "") {
 			
 				document.getElementById("calc").disabled = true;
+				document.getElementById("clipboard").disabled = false;
 				
 				var date = time.split("-");
 				
@@ -249,14 +255,14 @@
 				document.getElementById("raid").value = (avgRaid/sinceGymUpdate).toFixed(1); 			
 				document.getElementById("mon").value = (avgMon/allDays).toFixed(2);				// seit beginn
 				
-				var myOutput = 	"Während du bereits " + allDays + " Tage PokémonGo gespielt hast, hast du " + (avgExp/allDays).toFixed(0) + " EP pro Tag gefarmt. Dazu warst du " + (avgKm/allDays).toFixed(3) +
-								" Kilometer pro Tag unterwegs und hast dabei im Schnitt " + (avgPst/allDays).toFixed(0) + " Pokéstops abgedreht, " + (avgCpkm/allDays).toFixed(1) +
-								" Pokémon gefangen und " + (avgEgg/allDays).toFixed(1) + " Eier ausgebrütet. Dazu hast du " + (avgEvo/allDays).toFixed(1) +
-								" Pokémon entwickelt. \n\nSeit Beginn des Spiels hast du pro Tag " + (avgKent/allDays).toFixed(2) + " Pokémon aus der Kanto Region, und " + 
-								(avgJent/sinceJohto).toFixed(2) + " Pokémon aus der Johto Region gefangen. \n\nPro Tag hast du " + (avgGymb/allDays).toFixed(1) +
-								" mal an Arenen gekämpft und bis zum Arenen Update " + (avgGymt/toGymUpdate).toFixed(1) + " mal Trainiert. Seit dem Arenen Update saßen deine Pokémon " + 
-								(avgGymd/sinceGymUpdate).toFixed(0) + " Stunden pro Tag in Arenen und du hast täglich " + (avgFeed/sinceGymUpdate).toFixed(1) + " Beeren gefüttert und " + 
-								(avgRaid/sinceGymUpdate).toFixed(1) + " Raids pro Tag bestritten. \n\nDas alles hat dich pro Tag " + (avgMon/allDays).toFixed(2) + " Euro gekostet.";
+				myOutput = 	"Während du bereits " + allDays + " Tage PokémonGo gespielt hast, hast du " + (avgExp/allDays).toFixed(0) + " EP pro Tag gefarmt. Dazu warst du " + (avgKm/allDays).toFixed(3) +
+							" Kilometer pro Tag unterwegs und hast dabei im Schnitt " + (avgPst/allDays).toFixed(0) + " Pokéstops abgedreht, " + (avgCpkm/allDays).toFixed(1) +
+							" Pokémon gefangen und " + (avgEgg/allDays).toFixed(1) + " Eier ausgebrütet. Dazu hast du " + (avgEvo/allDays).toFixed(1) +
+							" Pokémon entwickelt. \n\nSeit Beginn des Spiels hast du pro Tag " + (avgKent/allDays).toFixed(2) + " Pokémon aus der Kanto Region, und " + 
+							(avgJent/sinceJohto).toFixed(2) + " Pokémon aus der Johto Region gefangen. \n\nPro Tag hast du " + (avgGymb/allDays).toFixed(1) +
+							" mal an Arenen gekämpft und bis zum Arenen Update " + (avgGymt/toGymUpdate).toFixed(1) + " mal Trainiert. Seit dem Arenen Update saßen deine Pokémon " + 
+							(avgGymd/sinceGymUpdate).toFixed(0) + " Stunden pro Tag in Arenen und du hast täglich " + (avgFeed/sinceGymUpdate).toFixed(1) + " Beeren gefüttert und " + 
+							(avgRaid/sinceGymUpdate).toFixed(1) + " Raids pro Tag bestritten. \n\nDas alles hat dich pro Tag " + (avgMon/allDays).toFixed(2) + " Euro gekostet.";
 				
 				document.getElementById("comment").rows = 10;
 				document.getElementById("comment").value = myOutput;	
@@ -268,7 +274,32 @@
 			}			
 		}
 		
+		// found on stackoverflow (https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript/33928558#33928558)
+		function copyToClipboard(text) {
+			if (window.clipboardData && window.clipboardData.setData) {
+				// IE specific code path to prevent textarea being shown while dialog is visible.
+				return clipboardData.setData("Text", text); 
+			} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+				var textarea = document.createElement("textarea");
+				textarea.textContent = text;
+				textarea.style.position = "fixed";  			// Prevent scrolling to bottom of page in MS Edge.
+				document.body.appendChild(textarea);
+				textarea.select();
+				try {
+					return document.execCommand("copy");  		// Security exception may be thrown by some browsers.
+				} catch (ex) {
+					console.warn("Copy to clipboard failed.", ex);
+					return false;
+				} finally {
+					document.body.removeChild(textarea);
+				}
+			}
+		}
+			
 		function reset() {
+		
+			document.getElementById("clipboard").disabled = true;
+			
 			var res = confirm("Möchten Sie wirklich alle Werte zurücksetzen?");
 			
 			if (res) {
