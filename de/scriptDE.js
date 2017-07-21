@@ -1,4 +1,4 @@
-document.getElementById("clipboard").disabled = true;
+//document.getElementById("clipboard").disabled = true;
 	
 // needed days
 var RELEASE_DATE = new Date(2016, 6, 06);	
@@ -42,7 +42,7 @@ function calculate() {
 	if (time != "") {
 	
 		//document.getElementById("calc").disabled = true;
-		document.getElementById("clipboard").disabled = false;
+		//document.getElementById("clipboard").disabled = false;
 		
 		var date = time.split("-");
 		
@@ -176,7 +176,7 @@ function copyToClipboard(text) {
 	
 function reset() {
 
-	document.getElementById("clipboard").disabled = true;
+	//document.getElementById("clipboard").disabled = true;
 	
 	var res = confirm("Möchten Sie wirklich alle Werte zurücksetzen?");
 	
