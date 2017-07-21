@@ -41,7 +41,7 @@ function calculate() {
 	// check if date is valid
 	if (time != "") {
 	
-		document.getElementById("calc").disabled = true;
+		//document.getElementById("calc").disabled = true;
 		document.getElementById("clipboard").disabled = false;
 		
 		var date = time.split("-");
@@ -115,6 +115,7 @@ function calculate() {
 		avgRaid = document.getElementById("raid").value;
 		avgMon = document.getElementById("mon").value;							
 
+		/*
 		// avg calculation and set new values fixed to two decimals
 		document.getElementById("exp").value = (avgExp/allDays).toFixed(0);				// seit beginn		
 		document.getElementById("km").value = (avgKm/allDays).toFixed(3);		
@@ -130,6 +131,7 @@ function calculate() {
 		document.getElementById("feed").value = (avgFeed/sinceGymUpdate).toFixed(2); 			
 		document.getElementById("raid").value = (avgRaid/sinceGymUpdate).toFixed(1); 			
 		document.getElementById("mon").value = (avgMon/allDays).toFixed(2);				// seit beginn
+		*/
 		
 		myOutput = 	"Während du bereits " + allDays + " Tage PokémonGo gespielt hast, hast du " + (avgExp/allDays).toFixed(0) + " EP pro Tag gefarmt. Dazu warst du " + (avgKm/allDays).toFixed(3) +
 					" Kilometer pro Tag unterwegs und hast dabei im Schnitt " + (avgPst/allDays).toFixed(0) + " Pokéstops abgedreht, " + (avgCpkm/allDays).toFixed(1) +
@@ -180,22 +182,22 @@ function reset() {
 	
 	if (res) {
 		document.getElementById("begin").value = "2016-07-13";		
-		document.getElementById("exp").value = avgExp;		
-		document.getElementById("km").value = avgKm;		
-		document.getElementById("pst").value = avgPst;		
-		document.getElementById("cpkm").value = avgCpkm;		
-		document.getElementById("evo").value = avgEvo;		
-		document.getElementById("egg").value = avgEgg;		
-		document.getElementById("kent").value = avgKent;
-		document.getElementById("jent").value = avgJent;
-		document.getElementById("gymb").value = avgGymb;		
-		document.getElementById("gymt").value = avgGymt;		
-		document.getElementById("gymd").value = avgGymd;		
-		document.getElementById("feed").value = avgFeed;		
-		document.getElementById("raid").value = avgRaid;		
-		document.getElementById("mon").value = avgMon;
+		document.getElementById("exp").value = "";		
+		document.getElementById("km").value = "";		
+		document.getElementById("pst").value = "";		
+		document.getElementById("cpkm").value = "";		
+		document.getElementById("evo").value = "";		
+		document.getElementById("egg").value = "";		
+		document.getElementById("kent").value = "";
+		document.getElementById("jent").value = "";
+		document.getElementById("gymb").value = "";		
+		document.getElementById("gymt").value = "";		
+		document.getElementById("gymd").value = "";		
+		document.getElementById("feed").value = "";		
+		document.getElementById("raid").value = "";		
+		document.getElementById("mon").value = "";
 		document.getElementById("comment").value = "";
 		document.getElementById("comment").rows = 2;
-		document.getElementById("calc").disabled = false;				
+		//document.getElementById("calc").disabled = false;				
 	} 
 }
