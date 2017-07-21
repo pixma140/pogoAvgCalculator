@@ -136,7 +136,7 @@ function calculate() {
 					" Pokémon gefangen und " + (avgEgg/allDays).toFixed(1) + " Eier ausgebrütet. Dazu hast du " + (avgEvo/allDays).toFixed(1) +
 					" Pokémon entwickelt. \n\nSeit Beginn des Spiels hast du pro Tag " + (avgKent/allDays).toFixed(2) + " Pokémon aus der Kanto Region und " + 
 					(avgJent/sinceJohto).toFixed(2) + " Pokémon aus der Johto Region gefangen. \n\nPro Tag hast du " + (avgGymb/allDays).toFixed(1) +
-					" mal an Arenen gekämpft und bis zum Arenen Update " + (avgGymt/toGymUpdate).toFixed(1) + " mal Trainiert. Seit dem Arenen Update saßen deine Pokémon " + 
+					" mal an Arenen gekämpft und bis zum Arenen Update " + (avgGymt/toGymUpdate).toFixed(1) + " mal trainiert. Seit dem Arenen Update saßen deine Pokémon " + 
 					(avgGymd/sinceGymUpdate).toFixed(0) + " Stunden pro Tag in Arenen, du hast täglich " + (avgFeed/sinceGymUpdate).toFixed(1) + " Beeren gefüttert und " + 
 					(avgRaid/sinceGymUpdate).toFixed(1) + " Raids pro Tag bestritten. \n\nDas alles hat dich pro Tag " + (avgMon/allDays).toFixed(2) + " Euro gekostet.";
 		
