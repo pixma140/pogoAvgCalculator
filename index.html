@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+
+<!-- LANDING PAGE -->
 <html>
 	<head>
 	
 		<!-- title -->
-		<title>Average Trainer Statistic Calculator for PokémonGo</title>
+		<title>Durchschnittlicher Trainerstatistik Berechner für PokémonGo</title>
 	
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,119 +25,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!-- add favicon -->
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+		
+		<script> window.location.replace("file:///E:/Github/pogoAvgCalculator/de/index.html"); </script>		
+		<!-- <script> window.location.replace("https://pixma140.github.io/pogoAvgCalculator/de/"); </script> -->
 	</head>
 	
-	<body>		
-		
-		<div class="container-fluid">
-		
-			<!-- DE -->
-			<h1>Berechner der Durchschnittlichen Trainerstatistik aus PokémonGo</h1>
-			<p>Dies ist ein Rechner der den Druchschnitt der Trainerstatistik berechnet.</p>
-			
-			<!-- EN
-			<h1>PokémonGo Average Trainer Statistic Calculator</h1>
-			<p>This is a calculator for the averages of the trainer statistics.</p>
-			-->			
-
-			<hr>
-			
-			<div class="form-group"> <!-- has-feedback has-clear -->
-			
-				<label for="begin">Wann hast du angefangen Pokémon Go zu spielen?:</label>				
-				<input type="date" value="2016-07-13" min="2016-07-06" max="2025-12-31" class="form-control" id="begin">
-				
-				<label for="exp">Wie viel EP hast du bisher in Summe erreicht?:</label>
-				<input type="number" placeholder="Bitte hier deine EP eingeben" class="form-control" id="exp">					
-				
-				<hr>
-				
-				<label for="km">Gelaufene Kilometer:</label>
-				<input type="number" placeholder="Bitte hier deine gelaufenen Kilometer eingeben" class="form-control" id="km">
-				
-				<label for="pst">Pokéstops:</label>
-				<input type="number" placeholder="Bitte hier die Anzahl der abgedrehten Pokéstops eingeben" class="form-control" id="pst">
-				
-				<hr>
-				
-				<label for="cpkm">Gefangene Pokémon:</label>
-				<input type="number" placeholder="Bitte hier Anzahl der gefangenen Pokémon eingeben" class="form-control" id="cpkm">
-				
-				<label for="evo">Entwicklungen:</label>
-				<input type="number" placeholder="Bitte hier die Anzahl der Entwickelten Pokémon eingeben" class="form-control" id="evo">
-				
-				<label for="egg">Eier:</label>
-				<input type="number" placeholder="Bitte hier die Anzahl der gebrüteten Eier eingeben" class="form-control" id="egg">
-				
-				<hr>
-				
-				<label for="kent">Kanto Einträge:</label>
-				<input type="number" placeholder="Bitte hier Anzahl der Kanto Einträge eingeben" class="form-control" id="kent">
-				
-				<label for="jent">Johto Einträge:</label>
-				<input type="number" placeholder="Bitte hier Anzahl der Johhto Einträge eingeben" class="form-control" id="jent">					
-				
-				<hr>
-				
-				<label for="gymb">Arenen Kämpfe:</label>
-				<input type="number" placeholder="Bitte hier Arenenkämpfe eingeben" class="form-control" id="gymb">
-				
-				<label for="gymt">Arenen Training:</label>
-				<input type="number" placeholder="Bitte hier die Trainingsanzahl eingeben" class="form-control" id="gymt">
-				
-				<hr>
-											
-				<label for="gymd">Verteidigungszeit:</label>
-				<input type="number" placeholder="Bitte hier die Verteidigungszeit eingeben (ohne Pokémon die noch rückkehren)" class="form-control" id="gymd">
-				
-				<label for="feed">Gefütterte Beeren:</label>
-				<input type="number" placeholder="Bitte hier Anzahl der gefütterten Beeren eingeben" class="form-control" id="feed">
-				
-				<label for="raid">Gewonnene Raids:</label>
-				<input type="number" placeholder="Bitte hier Anzahl Gewonnener Raids eingeben" class="form-control" id="raid">
-				
-				<hr>
-				
-				<label for="mon">Eingesetztes Geld:</label>
-				<input type="number" placeholder="Bitte hier ausgegebenes Geld angeben sofern gewünscht" class="form-control" id="mon">
-				
-				<hr>
-				
-				<label for="comment">Ergebnis:</label>
-				<textarea class="form-control" readonly placeholder="Hier erscheint nach Eingabe der Werte deine Duchschnittliche Statistik" rows="2" id="comment"></textarea>
-				
-				<hr>
-				
-				<div class="text-center">    
-					<button type="button" id="clipboard" onclick="copyToClipboard(myOutput)" class="btn btn-primary">In Zwischenablage kopieren</button> <br><br>
-					
-					<div class="btn-group">					
-						<button type="button" onclick="reset()" class="btn btn-danger">Reset</button>					
-						<button type="button" id="calc" onclick="calculate()" class="btn btn-success">Berechnen</button>						
-					</div>									
-					
-				</div>
-				
-			</div>	
-			
-		</div>
-
-		<nav class="navbar navbar-default navbar-fixed-bottom">
-		  <div class="container">
-		  
-			<ul class="nav navbar-nav navbar-left">
-				<li><a href="https://github.com/pixma140"><img src="github.png"> Find me on github</a></li>							
-			</ul>
-			
-			<ul class="nav navbar-nav navbar-right">				
-				<li><a href="https://pixma140.github.io/pogoAvgCalculator/de/"><img src="de.png"> German</a></li>
-				<li><a href="https://pixma140.github.io/pogoAvgCalculator/en/"><img src="en.png"> English</a></li>				
-			</ul>
-		  </div>
-		</nav>
+	<body>
+		<!-- body -->
 	</body>
-	
-	<!-- get my own script -->
-	<script src="script.js"></script>
 </html>

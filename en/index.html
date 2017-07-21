@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<!-- ENGLISH -->
+<html>
+	<head>
+	
+		<!-- title -->
+		<title>Average Trainer Statistic Calculator for PokémonGo</title>
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+		<style> body { padding-bottom: 70px; </style>
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
+		
+		<!-- charset -->
+		<meta charset="utf-8">
+		
+		<!-- viewport for mobile friendly -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- add favicon -->
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	</head>
+	
+	<body>		
+		
+		<div class="container-fluid">				
+			
+			<!-- EN -->			
+			<h1>Average Trainer Statistic Calculator for PokémonGo</h1>
+			<p>This is a calculator for the averages of the trainer statistics.</p>					
+
+			<hr>
+			
+			<div class="form-group"> <!-- has-feedback has-clear -->
+			
+				<label for="begin">When did you start playing PokémnGo?:</label>				
+				<input type="date" value="2016-07-13" min="2016-07-06" max="2025-12-31" class="form-control" id="begin">
+				
+				<label for="exp">What is your current exp?:</label>
+				<input type="number" placeholder="Enter exp here" class="form-control" id="exp">					
+				
+				<hr>
+				
+				<label for="km">Walked kilometers:</label>
+				<input type="number" placeholder="Enter kilometers here" class="form-control" id="km">
+				
+				<label for="pst">Pokéstops:</label>
+				<input type="number" placeholder="Enter number of Pokéstops" class="form-control" id="pst">
+				
+				<hr>
+				
+				<label for="cpkm">Cought Pokémon:</label>
+				<input type="number" placeholder="Enter number of cought Pokémon" class="form-control" id="cpkm">
+				
+				<label for="evo">Evolutions:</label>
+				<input type="number" placeholder="Enter number of evolved Pokémon" class="form-control" id="evo">
+				
+				<label for="egg">Eggs:</label>
+				<input type="number" placeholder="Enter number of hatched eggs" class="form-control" id="egg">
+				
+				<hr>
+				
+				<label for="kent">Kanto Entries:</label>
+				<input type="number" placeholder="Enter number of Kanto entries" class="form-control" id="kent">
+				
+				<label for="jent">Johto Entries:</label>
+				<input type="number" placeholder="Enter number of Johto entries" class="form-control" id="jent">					
+				
+				<hr>
+				
+				<label for="gymb">Gym battles:</label>
+				<input type="number" placeholder="Enter how often you battled" class="form-control" id="gymb">
+				
+				<label for="gymt">Gym training:</label>
+				<input type="number" placeholder="Enter how often you trained" class="form-control" id="gymt">
+				
+				<hr>
+											
+				<label for="gymd">Defending time:</label>
+				<input type="number" placeholder="Enter defending time here (without returning Pokémon)" class="form-control" id="gymd">
+				
+				<label for="feed">Berries:</label>
+				<input type="number" placeholder="Enter how many berries you feed" class="form-control" id="feed">
+				
+				<label for="raid">Won raid battles:</label>
+				<input type="number" placeholder="Enter won raid battles here" class="form-control" id="raid">
+				
+				<hr>
+				
+				<label for="mon">Spent money:</label>
+				<input type="number" placeholder="Enter spent money if wanted" class="form-control" id="mon">
+				
+				<hr>
+				
+				<label for="comment">Result:</label>
+				<textarea class="form-control" readonly placeholder="Your result will be displayed here after calculation" rows="2" id="comment"></textarea>
+				
+				<hr>
+				
+				<div class="text-center">    
+					<button type="button" id="clipboard" onclick="copyToClipboard(myOutput)" class="btn btn-primary">Copy to clipboard</button> <br><br>
+					
+					<div class="btn-group">					
+						<button type="button" onclick="reset()" class="btn btn-danger">Reset</button>					
+						<button type="button" id="calc" onclick="calculate()" class="btn btn-success">Calculate</button>						
+					</div>									
+					
+				</div>
+				
+			</div>	
+			
+		</div>
+
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+		  <div class="container">
+		  
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="https://github.com/pixma140"><img src="../github.png"> Find me on Github</a></li>							
+			</ul>
+			
+			<ul class="nav navbar-nav navbar-right">								
+				<li><a href="https://pixma140.github.io/pogoAvgCalculator/de/"><img src="../de.png"> German</a></li>
+				<li><a href="https://pixma140.github.io/pogoAvgCalculator/en/"><img src="../en.png"> English</a></li>		
+			</ul>
+		  </div>
+		</nav>
+	</body>
+	
+	<!-- get my own script -->
+	<script src="scriptEN.js"></script>
+</html>
